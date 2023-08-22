@@ -7,7 +7,7 @@ type UserState={
     id:number
     image:string
     lastName:string
-    token:number;
+    token:string;
     username:string
 }
 
