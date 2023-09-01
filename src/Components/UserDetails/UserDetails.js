@@ -18,14 +18,14 @@ const UserDetails = () => {
   })
   .catch(function (error) {
    
-    alert("No user exists right now!");
+    // alert("No user exists right now!");
   });
 
   })
   
   return (
-    <div>
-        <h1>User Details</h1>
+    <div >
+        <h1 >User Details</h1>
         {userDetails && (
         <ul>
          

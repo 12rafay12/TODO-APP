@@ -33,6 +33,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
+        {/* {className="logo"} */}
         <div className="logo">TODO APP: Hello {userName}</div>
         <ul className="nav-links">
           <li>
