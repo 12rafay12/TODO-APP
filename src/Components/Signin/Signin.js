@@ -3,10 +3,11 @@ import "./SigninStyles.scss";
 
 import Input from "./Components/Input";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+// import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { addUser } from "../../features/UserSlice";
+// import { addUser } from "../../features/UserSlice";
 import { useNavigate } from 'react-router-dom';
+import { loginAsync } from "../../features/UserSlice";
 
 
 
@@ -21,27 +22,36 @@ const Signin = () => {
   // const [user, setUser]=useState({});
   
  
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async(data) => {
+    try {
+      await dispatch(loginAsync(data)); // Dispatch the loginAsync action
+      alert("Successfully Signed In!");
+     
+      navigate('/todo');
+    } catch (error) {
+      alert("Invalid Credentials!");
+    }
+   
+
     
-    axios
-      .post("https://dummyjson.com/auth/login", data)
-      .then(function (response) {
-        // console.log(response.data);
-        dispatch(addUser(response.data));
-        // setUser(response.data);
-        // localStorage.setItem("user",JSON.stringify(response.data))
-        // if (Object.keys(response.data).length > 0) {
-        //   dispatch(setInitialState(response.data));
-        // }
-        alert("Successfully Signed In!");
-        localStorage.setItem("user",JSON.stringify(response.data))
-        navigate('/todo');
-      })
-      .catch(function (error) {
-        // console.log(error);
-        alert("Invalid Credentials!");
-      });
+    // axios
+    //   .post("https://dummyjson.com/auth/login", data)
+    //   .then(function (response) {
+    //     // console.log(response.data);
+    //     dispatch(addUser(response.data));
+    //     // setUser(response.data);
+    //     // localStorage.setItem("user",JSON.stringify(response.data))
+    //     // if (Object.keys(response.data).length > 0) {
+    //     //   dispatch(setInitialState(response.data));
+    //     // }
+    //     alert("Successfully Signed In!");
+    //     localStorage.setItem("user",JSON.stringify(response.data))
+    //     navigate('/todo');
+    //   })
+    //   .catch(function (error) {
+    //     // console.log(error);
+    //     alert("Invalid Credentials!");
+    //   });
       
   };
  

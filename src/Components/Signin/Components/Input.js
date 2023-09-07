@@ -1,13 +1,8 @@
 import React from 'react'
 import "./InputStyles.scss"
-import { UseFormRegister } from "react-hook-form"
-type InputType={
-    type:string,
-    placeholder:string,
-    register: UseFormRegister<any>,
-}
+// import { UseFormRegister } from "react-hook-form"
 
-const Input:React.FC <InputType> = (props) => {
+const Input = (props) => {
   
   return (
     <div>

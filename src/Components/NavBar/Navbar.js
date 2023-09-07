@@ -31,10 +31,10 @@ const Navbar = () => {
   },[]);
   
   return (
-    <div>
+   
       <nav className="navbar">
         {/* {className="logo"} */}
-        <div className="logo">TODO APP: Hello {userName}</div>
+        <div >TODO APP: Hello {userName}</div>
         <ul className="nav-links">
           <li>
             {token? <Link to="/todo" >Todo </Link>:null}
@@ -50,7 +50,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-    </div>
+    
   );
 };
 

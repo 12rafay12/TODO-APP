@@ -5,16 +5,18 @@
     background-color: #333;
     color: white;
     padding: 1rem;
+    min-height: 87px;
   }
   
-  .logo {
-   margin-top: -15px;
-  }
+  // .logo {
+  // //  margin-top: -15px;
+  // }
   
   .nav-links {
     list-style: none;
     display: flex;
     gap: 1rem;
+    margin-top: 15px;
   }
   
   .nav-links li a {

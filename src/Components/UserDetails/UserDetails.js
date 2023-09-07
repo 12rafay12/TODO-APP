@@ -1,8 +1,10 @@
 import React ,{useState, useEffect} from 'react'
+import "./UserDetails.scss"
 import axios from "axios";
 import { useSelector } from "react-redux";
 
 const UserDetails = () => {
+  const userImage=useSelector((state)=>state.users.userProfile.image)
 
   const userId = useSelector(
     (state) => state.users.userProfile.id
@@ -24,10 +26,12 @@ const UserDetails = () => {
   })
   
   return (
-    <div >
-        <h1 >User Details</h1>
+    // <div className="userContainer">
+      <div className='userbackground'>
+      <div className="userdiv">
+        <h1 className='userh1' >User Details</h1>
         {userDetails && (
-        <ul>
+        <ul className='userul'>
          
           <li>
             <strong>UserName: </strong>{userDetails.firstName+" "+userDetails.maidenName+" "+userDetails.lastName}
@@ -50,12 +54,15 @@ const UserDetails = () => {
           
             PostalCode:{userDetails.company.address.postalCode},
             State:{userDetails.company.address.state}
-          
+          <li>
+            <img src={userImage} alt="User"/>         
+          </li>
         </ul>
       )}
-
+      </div>
+      </div>
       
-    </div>
+    // </div>
   )
 }
 
